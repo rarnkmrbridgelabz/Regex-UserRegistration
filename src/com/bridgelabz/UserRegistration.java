@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class UserRegistration {
 
-    static Pattern pattern =Pattern.compile("^(?=.*[A-Z])(?=.*[0-9])([a-zA-Z0-9]*([@#$%^&-+=()])*).{8,}$");
+    static Pattern pattern =Pattern.compile("^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$");
     static void checkPattern(String password){
         Matcher matcher =pattern.matcher(password);
         if (matcher.matches())
@@ -17,7 +17,7 @@ public class UserRegistration {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter Password with Atleast One Number:");
+        System.out.println("Enter Password with Atleast One Special Character:");
         String password = scanner.next();
         checkPattern(password);
 

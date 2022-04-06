@@ -5,9 +5,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class UserRegistration {
 
-    static Pattern pattern =Pattern.compile("[A-Z]{1}[a-z]{3,}");
-    static void checkPattern(String lastName){
-        Matcher matcher =pattern.matcher(lastName);
+    static Pattern pattern =Pattern.compile("^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$");
+    static void checkPattern(String emailId){
+        Matcher matcher =pattern.matcher(emailId);
         if (matcher.matches())
             System.out.println("True");
         else
@@ -17,9 +17,9 @@ public class UserRegistration {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter Last Name:");
-        String lastName = scanner.next();
-        checkPattern(lastName);
+        System.out.println("Enter e-Mail ID:");
+        String emailId = scanner.next();
+        checkPattern(emailId);
 
     }
 }

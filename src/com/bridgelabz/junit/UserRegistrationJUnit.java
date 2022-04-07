@@ -1,8 +1,5 @@
 package com.bridgelabz.junit;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class UserRegistrationJUnit {
 
     public boolean validateName(String name) {
